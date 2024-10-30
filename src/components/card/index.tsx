@@ -8,7 +8,6 @@ type Props = {
 };
 
 const Card = ({ img, show }: Props) => {
-  console.log('show', show)
   return (
     <div className={`flip-card${show ? " flipped" : ""}`}>
       <div className="flip-card-inner">

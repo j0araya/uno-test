@@ -12,7 +12,6 @@ const defaultImg: IMG = {
   uuid: "",
   title: "",
   show: false,
-  isSelected: false,
 };
 
 export default function Game() {

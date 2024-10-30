@@ -4,5 +4,4 @@ export type IMG = {
   uuid: string;
   title: string;
   show: boolean;
-  isSelected: false;
 };

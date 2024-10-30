@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   basePath: "/uno-test",
   output: "export",
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  basePath: "/uno-test",
   output: "export",
   images: {
     remotePatterns: [

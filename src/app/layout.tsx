@@ -26,9 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.className} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+          {children}
+        </main>
       </body>
     </html>
   );

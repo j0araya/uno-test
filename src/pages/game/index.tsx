@@ -1,10 +1,10 @@
 "use client";
 
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react";
 import { IMG } from "../../types";
 import { getImages } from "./service";
-import Card from "@/components/card/index";
-import { getLocalUser, setLocalUser } from "@/utils/LocalStorageUtils";
+import Card from "../../components/card/index";
+import { getLocalUser, setLocalUser } from "../../utils/LocalStorageUtils";
 
 const defaultImg: IMG = {
   id: 0,
@@ -22,6 +22,7 @@ export default function Game() {
   const [assert, setAssert] = useState<number>(0);
   const [errors, setErrors] = useState<number>(0);
   const [user, setUser] = useState<string>("");
+  const [name, setName] = useState<string>("");
 
   useEffect(() => {
     const get = async () => {
@@ -60,9 +61,12 @@ export default function Game() {
     }
   };
 
-  const onSubmit = (e: FormEvent) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const name = (e!.target as HTMLFormElement)!.name?.value;
     setLocalUser(name);
     setUser(name);
   };
@@ -96,10 +100,12 @@ export default function Game() {
         >
           <form onSubmit={onSubmit}>
             <input
+              id="name"
               type="text"
               name="name"
               placeholder="Ingresa tu nombre"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              onChange={onChange}
             />
             <button type="submit">guardar</button>
           </form>

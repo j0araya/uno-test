@@ -24,4 +24,4 @@ const getImages = async () => {
   }
 };
 
-export { getImages };
+export default getImages;

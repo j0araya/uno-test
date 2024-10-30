@@ -2,7 +2,7 @@
 
 import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react";
 import { IMG } from "../../types";
-import { getImages } from "./service";
+import getImages from "./service";
 import Card from "../../components/card/index";
 import { getLocalUser, setLocalUser } from "../../utils/LocalStorageUtils";
 
